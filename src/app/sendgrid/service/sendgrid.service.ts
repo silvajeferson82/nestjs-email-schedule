@@ -11,7 +11,7 @@ export class SendgridService {
     const url = 'https://api.sendgrid.com/v3/mail/send';
     const config = {
       headers: {
-        Authorization: 'Bearer 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',
+        Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
       },
     };
     const response = await lastValueFrom(this.httpService.post(url, data, config));
